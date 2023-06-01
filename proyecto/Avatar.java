@@ -1,28 +1,20 @@
-import java.util.Collection;
-
 public class Avatar {
 
-
-	private int id, fuerza, defensa, velocidad, inteligencia;
+	//---------atributos-----------
+	private int fuerza, defensa, velocidad, inteligencia;
 	private String nombre;
-	
-	private int numpers;
 	
 	public Avatar() {}
 
-	public Avatar(int id, String n, int f, int d, int i, int v) {
+	public Avatar(String n, int f, int d, int i, int v) {
 		nombre = n;
 		fuerza = f;
 		defensa = d;
 		velocidad = v;
 		inteligencia = i;
-		numpers = id;
 	}
 
-	public int getpersonaje() {
-		return id;
-	}
-
+	//-----getters y setters------
 	public int getFuerza() {
 		return fuerza;
 	}
@@ -63,9 +55,15 @@ public class Avatar {
 		this.nombre = nombre;
 	}
 
-	public void DatosPersonaje() {
-		System.out.println("---Personaje " + numpers + "---\n Nombre = " + nombre + "\n Fuerza = " + fuerza + "\n Defensa = "
-						+ defensa + "\n Velocidad = " + velocidad + "\n Inteligencia = " + inteligencia + "\n");
+	public String DatosPersonaje() { //constructor de tipo String para que funcione el .write del método escribir()
+		String datos = "---" + nombre + "---" + "\nFuerza = " + fuerza + "\nDefensa = "
+                      + defensa + "\nVelocidad = " + velocidad + "\nInteligencia = " + inteligencia + "\n";
+    	return datos;
+	}
+
+	public void constPersonaje(){ //constructor sin return para que se puedan mostrar los personajes en tiemop de ejecución
+		System.out.println("---" + nombre + "---" + "\nFuerza = " + fuerza + "\nDefensa = "
+		+ defensa + "\nVelocidad = " + velocidad + "\nInteligencia = " + inteligencia + "\n");
 	}
 
 }

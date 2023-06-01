@@ -9,7 +9,7 @@ public class MisPersonajes {
 		Scanner sc = new Scanner(System.in);
 		int opcion;
 
-		do {
+		do { //bucle do-while para que el usuario salga cuando quiera
 			System.out.println("----------MENÚ----------");
 			System.out.println("0-Información sobre la aplicación");
 			System.out.println("1-Introducir personaje propio");
@@ -18,8 +18,7 @@ public class MisPersonajes {
 			System.out.println("4-Eliminar todos los personajes");
 			System.out.println("5-Mostrar los personajes creados");
 			System.out.println("6-Añadir personajes al fichero");
-			System.out.println("7-Mostrar personajes del fichero");
-			System.out.println("8-Salir");
+			System.out.println("7-Salir");
 			System.out.println("------------------------");
 			System.out.print("Número de opción: ");
 			opcion = sc.nextInt();
@@ -51,14 +50,10 @@ public class MisPersonajes {
 				break;
 
 			case 6:
-				Fichero.escribir();
+				avatar.escribir();
 				break;
 
 			case 7:
-                Fichero.leer();
-				break;
-
-			case 8:
 				System.out.println();
 				System.out.println("ADIÓS");
 				break;
@@ -67,8 +62,9 @@ public class MisPersonajes {
 				System.out.println("No existe esta opcion, vuelva a introducir la que desea");
 				break;
 			}
-		} while (opcion != 8);
-
+		} while (opcion != 7);
+		
+		sc.close();
 	}
 
 }

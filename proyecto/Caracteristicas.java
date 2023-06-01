@@ -20,6 +20,7 @@ public class Caracteristicas {
 	}
 
 	public Avatar añadir() {
+		Avatar añadido = new Avatar();
 		do {
 			puntos = 36;
 			System.out.println("Introduce los datos del nuevo personaje:");
@@ -39,7 +40,7 @@ public class Caracteristicas {
 			System.out.print("Inteligencia -> ");
 			int inteligencia = sc.nextInt();
 			puntos = puntos - inteligencia;
-			Avatar añadido = new Avatar(id, nombre, fuerza, defensa, velocidad, inteligencia);
+			añadido = new Avatar(id, nombre, fuerza, defensa, velocidad, inteligencia);
 			
 			if (puntos >= 0) {
 				System.out.println("Te quedan " + cantpers + " personajes para completar el equipo");
@@ -49,9 +50,11 @@ public class Caracteristicas {
 				puntos = 0;
 			} else {
 				System.out.println("Has pasado el límite de puntos, vuelve a introducirlos");
+				puntos = 36;
 			}
-			return añadido;
-		} while (puntos != 0 && cantpers > 0);
+			
+		} while (puntos > 0 && cantpers > 0);
+		return añadido;
 	}
 
 	public void borrar() {
